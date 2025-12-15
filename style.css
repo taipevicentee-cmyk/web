@@ -1,0 +1,287 @@
+/* Importación de Fuentes (de Google Fonts) */
+/* Playfair Display para títulos, Poppins para cuerpo */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Playfair+Display:wght@700&display=swap');
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Variables de Color para Perú */
+:root {
+    --color-primario: #B80000; /* Rojo Intenso (similar a la bandera) */
+    --color-secundario: #FFCC00; /* Dorado/Amarillo */
+    --color-fondo-claro: #F5F5F5;
+    --color-fondo-oscuro: #2C3E50; /* Azul Oscuro Elegante */
+    --color-texto-oscuro: #333;
+    --color-texto-claro: #FFFFFF;
+}
+
+/* Contenedor General */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Estilos de Tipografía */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-primario);
+    margin-bottom: 15px;
+}
+
+h2 { font-size: 2.5em; }
+h3 { font-size: 1.8em; }
+
+/* --- HEADER y Navegación --- */
+header {
+    background: var(--color-texto-claro);
+    color: var(--color-texto-oscuro);
+    border-bottom: 3px solid var(--color-secundario);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+header h1 {
+    color: var(--color-primario);
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--color-texto-oscuro);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 15px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--color-primario);
+}
+
+/* --- SECCIÓN HERO --- */
+.hero {
+    background: url('placeholder-peru.jpg') no-repeat center center/cover; /* Reemplaza 'placeholder-peru.jpg' */
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-texto-claro);
+    position: relative;
+}
+
+.hero::before { /* Overlay semi-transparente para mejor legibilidad */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+.hero-content h2 {
+    color: var(--color-texto-claro);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    background: var(--color-secundario);
+    color: var(--color-texto-oscuro);
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #FFD733; /* Tono más claro de amarillo */
+}
+
+/* --- SECCIONES GENERALES --- */
+.seccion-clara {
+    background: var(--color-fondo-claro);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.seccion-oscura {
+    background: var(--color-fondo-oscuro);
+    color: var(--color-texto-claro);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.seccion-oscura h3 {
+    color: var(--color-secundario);
+}
+
+/* Estilos de la sección Nosotros */
+.caracteristicas {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.caracteristicas div {
+    background: var(--color-texto-claro);
+    color: var(--color-primario);
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin: 10px;
+    border: 1px solid var(--color-primario);
+}
+
+
+/* Estilos de la sección Productos */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.tarjeta-producto {
+    background: var(--color-texto-claro);
+    color: var(--color-texto-oscuro);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta-producto h4 {
+    color: var(--color-primario);
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Estilos de Contacto */
+.formulario-contacto {
+    max-width: 500px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario-contacto input[type="text"],
+.formulario-contacto input[type="email"],
+.formulario-contacto textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+}
+
+.formulario-contacto textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.formulario-contacto button.btn {
+    background: var(--color-primario);
+    color: var(--color-texto-claro);
+    border: none;
+    cursor: pointer;
+}
+
+.formulario-contacto button.btn:hover {
+    background: #A00000; /* Tono más oscuro de rojo */
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--color-fondo-oscuro);
+    color: var(--color-texto-claro);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 3px solid var(--color-secundario);
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--color-secundario);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Media Queries para Responsiveness (Dispositivos pequeños) --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+    .caracteristicas {
+        flex-direction: column;
+    }
+
+    .caracteristicas div {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
